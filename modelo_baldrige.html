@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-T">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo Malcolm Baldrige: Guía Interactiva</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* bg-slate-50 */
+            color: #334155; /* text-slate-700 */
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .nav-link {
+            cursor: pointer;
+            padding: 0.75rem 1rem;
+            border-radius: 0.375rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            color: #475569; /* text-slate-600 */
+        }
+        .nav-link:hover {
+            background-color: #e0f2fe; /* bg-sky-100 */
+            color: #0369a1; /* text-sky-700 */
+        }
+        .nav-link.active {
+            background-color: #0ea5e9; /* bg-sky-500 */
+            color: white;
+            font-weight: 600;
+        }
+        .tab-button {
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            border: 1px solid #cbd5e1; /* border-slate-300 */
+            background-color: white;
+            color: #0369a1; /* text-sky-700 */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .tab-button.active, .tab-button:hover {
+            background-color: #0ea5e9; /* bg-sky-500 */
+            color: white;
+            border-color: #0ea5e9; /* border-sky-500 */
+        }
+        .accordion-header {
+            cursor: pointer;
+            padding: 0.75rem;
+            background-color: #f1f5f9; /* bg-slate-100 */
+            border: 1px solid #e2e8f0; /* border-slate-200 */
+            border-radius: 0.375rem;
+            font-weight: 500;
+            color: #0369a1; /* text-sky-700 */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .accordion-content {
+            display: none;
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0; /* border-slate-200 */
+            border-top: none;
+            border-radius: 0 0 0.375rem 0.375rem;
+        }
+        .accordion-item.open .accordion-content {
+            display: block;
+        }
+        .accordion-item.open .accordion-header .icon::before {
+            content: '-';
+        }
+        .accordion-header .icon::before {
+            content: '+';
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="min-h-screen flex flex-col lg:flex-row">
+        <nav class="lg:w-64 bg-white p-4 shadow-lg lg:sticky lg:top-0 lg:h-screen overflow-y-auto">
+            <h1 class="text-2xl font-bold text-sky-700 mb-6 border-b pb-3 border-slate-300">Modelo Baldrige</h1>
+            <ul class="space-y-2">
+                <li><a class="nav-link active" data-target="inicio">Inicio</a></li>
+                <li><a class="nav-link" data-target="origen">1. Origen y Fundamentos</a></li>
+                <li><a class="nav-link" data-target="principios">2. Principios y Estructura</a></li>
+                <li><a class="nav-link" data-target="aplicabilidad">3. Aplicabilidad</a></li>
+                <li><a class="nav-link" data-target="herramientas">4. Herramientas y Metodologías</a></li>
+                <li><a class="nav-link" data-target="ejemplos">5. Ejemplos Reales</a></li>
+                <li><a class="nav-link" data-target="referencias">6. Referencias</a></li>
+            </ul>
+        </nav>
+
+        <main class="flex-1 p-6 md:p-10 bg-slate-50 overflow-y-auto">
+            
+            <section id="inicio" class="content-section active">
+                <h2 class="text-3xl font-semibold text-sky-700 mb-6">Bienvenido a la Guía Interactiva del Modelo Malcolm Baldrige</h2>
+                <div class="bg-white p-6 rounded-lg shadow-md space-y-4">
+                    <p class="text-lg">El Modelo Malcolm Baldrige es un marco de gestión de la calidad y la excelencia organizacional reconocido a nivel mundial, diseñado para ayudar a las organizaciones a mejorar su desempeño general.</p>
+                    <p>Esta aplicación interactiva te guiará a través de los componentes clave del modelo, incluyendo su origen, principios, estructura, aplicabilidad, herramientas asociadas y ejemplos de su utilización. Utiliza la navegación lateral para explorar cada sección y profundizar en los conceptos que impulsan la excelencia organizacional.</p>
+                    <p>El objetivo es proporcionar una comprensión clara y accesible de cómo el Modelo Baldrige puede ser una herramienta poderosa para la mejora continua y la competitividad en diversos sectores.</p>
+                </div>
+            </section>
+
+            <section id="origen" class="content-section">
+                <h2 class="text-3xl font-semibold text-sky-700 mb-6">1. Origen y Fundamentos del Sistema</h2>
+                <div class="bg-white p-6 rounded-lg shadow-md space-y-4">
+                    <p>El <strong>Premio Nacional de Calidad Malcolm Baldrige</strong> fue establecido por el Congreso de los Estados Unidos en <strong>1987</strong> en honor a Malcolm Baldrige Jr., Secretario de Comercio de EE. UU. Su creación fue una respuesta a la creciente preocupación por la competitividad de las empresas estadounidenses frente a la calidad de los productos japoneses en la década de 1980.</p>
+                    
+                    <h3 class="text-xl font-medium text-sky-600 mt-4">Objetivo Principal del Modelo:</h3>
+                    <ul class="list-disc list-inside pl-4 space-y-1">
+                        <li>Promover la conciencia sobre la calidad y la excelencia en el desempeño como elementos clave para la competitividad.</li>
+                        <li>Reconocer a las organizaciones estadounidenses que demuestran un desempeño sobresaliente.</li>
+                        <li>Difundir las mejores prácticas de gestión entre las organizaciones.</li>
+                    </ul>
+
+                    <p class="mt-4">El modelo se fundamenta en la idea de que la excelencia en el desempeño es el resultado de un enfoque sistémico, integrado y basado en hechos, que abarca todas las funciones y niveles de la organización.</p>
+                    
+                    <h3 class="text-xl font-medium text-sky-600 mt-4">Valores y Conceptos Fundamentales:</h3>
+                    <ul class="list-disc list-inside pl-4 space-y-1">
+                        <li><strong>Liderazgo Visionario:</strong> La dirección es clave para establecer la dirección y los valores.</li>
+                        <li><strong>Excelencia Impulsada por el Cliente:</strong> El cliente es el juez final de la calidad y el valor.</li>
+                        <li><strong>Aprendizaje Organizacional y Personal:</strong> La capacidad de aprender y adaptarse es crucial para la mejora continua.</li>
+                        <li><strong>Valoración de las Personas y los Asociados:</strong> El compromiso y el desarrollo del personal son esenciales.</li>
+                        <li><strong>Agilidad:</strong> La capacidad de responder rápidamente a los cambios.</li>
+                        <li><strong>Gestión Basada en Hechos:</strong> Las decisiones deben fundamentarse en datos y análisis.</li>
+                        <li><strong>Orientación hacia los Resultados y Creación de Valor:</strong> El enfoque está en los resultados clave para todos los grupos de interés.</li>
+                        <li><strong>Perspectiva de Sistema:</strong> Ver la organización como un todo interconectado.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="principios" class="content-section">
+                <h2 class="text-3xl font-semibold text-sky-700 mb-6">2. Principios y Estructura</h2>
+                <div class="bg-white p-6 rounded-lg shadow-md space-y-4">
+                    <p>El Modelo Malcolm Baldrige se estructura en <strong>siete categorías de criterios interrelacionados</strong> que representan las áreas clave de la gestión y el desempeño organizacional. Estos criterios no son prescriptivos (no dicen "qué hacer"), sino que son un marco de preguntas que invitan a la reflexión sobre "cómo se hace" y "qué resultados se obtienen".</p>
+                    
+                    <h3 class="text-xl font-medium text-sky-600 mt-4 mb-3">Las Siete Categorías de Criterios:</h3>
+                    <div id="criteriaTabsContainer" class="mb-4 flex flex-wrap gap-2">
+                        </div>
+                    <div id="criteriaContentContainer">
+                        </div>
+
+                    <h3 class="text-xl font-medium text-sky-600 mt-6">Enfoque de Evaluación: ADLI/LeTCI</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-sky-50 p-4 rounded-md">
+                            <h4 class="font-semibold text-sky-700">ADLI (Approach, Deployment, Learning, Integration)</h4>
+                            <p class="text-sm">Para las categorías de proceso (1 a 6), evalúa la calidad del <strong>Enfoque</strong>, la extensión del <strong>Despliegue</strong>, el <strong>Aprendizaje</strong> y la <strong>Integración</strong> en la organización.</p>
+                        </div>
+                        <div class="bg-teal-50 p-4 rounded-md">
+                            <h4 class="font-semibold text-teal-700">LeTCI (Levels, Trends, Comparisons, Integration)</h4>
+                            <p class="text-sm">Para la categoría de Resultados (7), evalúa los <strong>Niveles</strong> de desempeño, las <strong>Tendencias</strong> a lo largo del tiempo, las <strong>Comparaciones</strong> con otras organizaciones y la <strong>Integración</strong> de los resultados con los objetivos.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="aplicabilidad" class="content-section">
+                <h2 class="text-3xl font-semibold text-sky-700 mb-6">3. Aplicabilidad</h2>
+                 <div class="bg-white p-6 rounded-lg shadow-md space-y-4">
+                    <p>El Modelo Malcolm Baldrige es <strong>altamente adaptable y aplicable</strong> a una amplia gama de organizaciones, independientemente de su tamaño, sector o industria. Originalmente enfocado en la manufactura, se ha expandido para incluir:</p>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+                        <li class="flex items-center space-x-3 bg-slate-100 p-3 rounded-md">
+                            <span class="text-xl">🏭</span>
+                            <span>Empresas Manufactureras</span>
+                        </li>
+                        <li class="flex items-center space-x-3 bg-slate-100 p-3 rounded-md">
+                            <span class="text-xl">💼</span>
+                            <span>Empresas de Servicios</span>
+                        </li>
+                        <li class="flex items-center space-x-3 bg-slate-100 p-3 rounded-md">
+                            <span class="text-xl">🏢</span>
+                            <span>Pequeñas Empresas</span>
+                        </li>
+                        <li class="flex items-center space-x-3 bg-slate-100 p-3 rounded-md">
+                            <span class="text-xl">🏥</span>
+                            <span>Organizaciones de Salud</span>
+                        </li>
+                        <li class="flex items-center space-x-3 bg-slate-100 p-3 rounded-md">
+                            <span class="text-xl">🎓</span>
+                            <span>Organizaciones Educativas</span>
+                        </li>
+                        <li class="flex items-center space-x-3 bg-slate-100 p-3 rounded-md">
+                            <span class="text-xl">🤝</span>
+                            <span>Organizaciones Sin Fines de Lucro</span>
+                        </li>
+                    </ul>
+                    <p class="mt-4">La flexibilidad del modelo radica en que no prescribe soluciones, sino que proporciona un marco para que cada organización evalúe sus propios procesos y resultados en relación con los criterios de excelencia.</p>
+                </div>
+            </section>
+
+            <section id="herramientas" class="content-section">
+                <h2 class="text-3xl font-semibold text-sky-700 mb-6">4. Herramientas o Metodologías Asociadas</h2>
+                <div class="bg-white p-6 rounded-lg shadow-md space-y-4">
+                    <p>Aunque el Modelo Baldrige no impone el uso de metodologías o herramientas específicas, su implementación efectiva impulsa a las organizaciones a adoptar y aplicar una variedad de enfoques de Ingeniería Industrial y gestión de la calidad.</p>
+                    
+                    <div id="methodologiesAccordionContainer" class="space-y-3 mt-4">
+                        </div>
+                </div>
+            </section>
+
+            <section id="ejemplos" class="content-section">
+                <h2 class="text-3xl font-semibold text-sky-700 mb-6">5. Ejemplos Reales de Utilización</h2>
+                <div class="bg-white p-6 rounded-lg shadow-md space-y-4">
+                    <p>El Premio Nacional de Calidad Malcolm Baldrige ha reconocido a numerosas organizaciones estadounidenses por su excelencia en el desempeño. Algunos ejemplos notables de ganadores a lo largo de los años incluyen:</p>
+                    <ul class="list-disc list-inside pl-4 space-y-2">
+                        <li><strong>The Ritz-Carlton Hotel Company:</strong> Ganador en múltiples ocasiones (1992, 1999), reconocido por su excepcional servicio al cliente y su sistema de gestión de la calidad.</li>
+                        <li><strong>Motorola Inc.:</strong> Uno de los primeros ganadores (1988), destacada por su liderazgo en la implementación de Six Sigma y la mejora de la calidad en la manufactura.</li>
+                        <li><strong>Boeing Commercial Airplanes (varias divisiones):</strong> Reconocida por su excelencia en ingeniería y procesos de fabricación.</li>
+                        <li><strong>North Mississippi Health Services:</strong> Ganador en el sector de la salud (2012), por su enfoque en la atención al paciente y la mejora continua de los resultados clínicos.</li>
+                        <li><strong>City of Irving, Texas:</strong> Ganador en la categoría de organizaciones sin fines de lucro/gubernamentales (2012), demostrando la aplicabilidad del modelo al sector público.</li>
+                        <li><strong>Mid-America Transplant:</strong> Ganador en el sector de la salud (2015), por su liderazgo en la donación y trasplante de órganos.</li>
+                    </ul>
+                    <p class="mt-4">Estas organizaciones utilizaron el marco Baldrige para autoevaluarse, identificar áreas de mejora y transformar sus operaciones para lograr un desempeño superior y sostenido.</p>
+                </div>
+            </section>
+
+            <section id="referencias" class="content-section">
+                <h2 class="text-3xl font-semibold text-sky-700 mb-6">6. Referencias Bibliográficas</h2>
+                <div class="bg-white p-6 rounded-lg shadow-md space-y-4">
+                    <p>Para profundizar en el Modelo Malcolm Baldrige, se recomienda consultar las siguientes fuentes:</p>
+                    <ul class="list-disc list-inside pl-4 space-y-2">
+                        <li>
+                            <strong>NIST (National Institute of Standards and Technology) - Baldrige Performance Excellence Program:</strong> La fuente oficial de los criterios y recursos del modelo.
+                            <br/>Página web: <a href="https://www.nist.gov/baldrige" target="_blank" class="text-sky-600 hover:underline">https://www.nist.gov/baldrige</a>
+                        </li>
+                        <li>
+                            <strong>ASQ (American Society for Quality):</strong> Proporciona recursos y publicaciones sobre el Modelo Baldrige y la gestión de la calidad.
+                            <br/>Página web: <a href="https://asq.org/" target="_blank" class="text-sky-600 hover:underline">https://asq.org/</a> (Buscar "Malcolm Baldrige National Quality Award")
+                        </li>
+                        <li>
+                            <strong>Libros y Publicaciones Académicas:</strong>
+                            <ul class="list-circle list-inside pl-6 space-y-1 mt-1">
+                                <li>Evans, J. R., & Lindsay, W. M. (2020). <em>Managing for Quality and Performance Excellence</em>. Cengage Learning. (Este es un texto clásico que a menudo cubre el Baldrige en detalle).</li>
+                                <li>Artículos de revistas especializadas en gestión de la calidad y excelencia organizacional.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentSections = document.querySelectorAll('.content-section');
+            const criteriaTabsContainer = document.getElementById('criteriaTabsContainer');
+            const criteriaContentContainer = document.getElementById('criteriaContentContainer');
+            const methodologiesAccordionContainer = document.getElementById('methodologiesAccordionContainer');
+
+            // Data for Criteria Tabs
+            const criteriaData = [
+                { id: 'liderazgo', name: '1. Liderazgo', content: 'Examina cómo la alta dirección guía la organización y cómo la organización aborda sus responsabilidades públicas y su ciudadanía.' },
+                { id: 'estrategia', name: '2. Estrategia', content: 'Evalúa cómo la organización establece sus direcciones estratégicas y cómo determina los planes de acción clave.' },
+                { id: 'clientes', name: '3. Clientes', content: 'Analiza cómo la organización determina los requisitos y expectativas de sus clientes y mercados, cómo construye relaciones con los clientes y cómo gestiona la satisfacción del cliente.' },
+                { id: 'medicion', name: '4. Medición, Análisis y Gestión del Conocimiento', content: 'Se enfoca en cómo la organización selecciona, recopila, analiza, gestiona y utiliza datos, información y conocimiento para apoyar procesos clave y gestionar el desempeño.' },
+                { id: 'fuerzaLaboral', name: '5. Fuerza Laboral', content: 'Examina cómo la organización involucra, desarrolla y empodera a su fuerza laboral para maximizar su potencial individual y organizacional.' },
+                { id: 'operaciones', name: '6. Operaciones', content: 'Evalúa cómo la organización diseña, gestiona y mejora sus procesos operativos y sistemas de trabajo para producir productos y servicios de alta calidad y valor.' },
+                { id: 'resultados', name: '7. Resultados', content: 'Se centra en el desempeño de la organización en todas las áreas clave: clientes, productos y servicios, finanzas y mercado, fuerza laboral, operaciones, gobernanza y responsabilidad social.' }
+            ];
+
+            // Data for Methodologies Accordion
+            const methodologiesData = [
+                { 
+                    title: 'Metodologías Comúnmente Asociadas',
+                    items: [
+                        'Gestión de la Calidad Total (TQM): Filosofía integral de mejora continua y enfoque en el cliente.',
+                        'Ciclo PDCA (Plan-Do-Check-Act): Metodología iterativa para la mejora continua de procesos.',
+                        'Six Sigma: Enfoque basado en datos para reducir defectos y variabilidad en los procesos (DMAIC).',
+                        'Lean Management: Metodología para eliminar desperdicios y optimizar la eficiencia de los procesos.',
+                        'Gestión por Procesos: Enfoque sistemático para identificar, documentar, analizar y mejorar los procesos organizacionales.',
+                        'Planificación Estratégica: Metodologías para definir y desplegar la visión y los objetivos de la organización.',
+                        'Benchmarking: Proceso de comparar el desempeño y las prácticas con los líderes de la industria.',
+                        'Voz del Cliente (VOC): Métodos para recopilar y analizar las necesidades y expectativas del cliente.',
+                        'Gestión del Conocimiento (KM): Enfoques para capturar, compartir y utilizar el conocimiento organizacional.'
+                    ]
+                },
+                {
+                    title: 'Herramientas de Análisis de Datos',
+                    items: [
+                        'Las Siete Herramientas de la Calidad: Diagrama de Pareto, Diagrama de Ishikawa (Causa-Efecto), Histogramas, Gráficos de Control, Diagramas de Dispersión, Hojas de Verificación, Estratificación.',
+                        'Software de Business Intelligence (BI): Para análisis y visualización de datos de desempeño.',
+                        'Software Estadístico: (ej. Minitab, R, Python) para análisis más complejos y Diseño de Experimentos (DOE).'
+                    ]
+                },
+                {
+                    title: 'Herramientas de Optimización de Procesos',
+                    items: [
+                        'Mapeo de Procesos / Flujogramas: Para visualizar y documentar los procesos.',
+                        'Value Stream Mapping (VSM): Para identificar desperdicios en el flujo de valor.',
+                        '5S: Para la organización y estandarización del lugar de trabajo.',
+                        'Poka-Yoke (A prueba de errores): Diseño de procesos para prevenir errores.',
+                        'AMFE (Análisis de Modo y Efecto de Fallo): Para identificar y mitigar riesgos.'
+                    ]
+                },
+                {
+                    title: 'Herramientas de Gestión Estratégica y del Desempeño',
+                    items: [
+                        'Balanced Scorecard (Cuadro de Mando Integral): Para monitorear el desempeño estratégico.',
+                        'Análisis FODA (SWOT): Para la evaluación estratégica.',
+                        "Cuadros de Mando (Dashboards) y KPI's: Para el seguimiento visual de los indicadores clave de desempeño."
+                    ]
+                },
+                {
+                    title: 'Herramientas de Gestión de la Fuerza Laboral y el Conocimiento',
+                    items: [
+                        'Encuestas de Clima Laboral y Satisfacción: Para medir la percepción del personal.',
+                        'Sistemas de Gestión del Conocimiento (KMS): Plataformas para la gestión del saber organizacional.'
+                    ]
+                }
+            ];
+
+            // Function to switch active section
+            function switchSection(targetId) {
+                contentSections.forEach(section => {
+                    section.classList.remove('active');
+                    if (section.id === targetId) {
+                        section.classList.add('active');
+                    }
+                });
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-target') === targetId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            // Initialize navigation
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('data-target');
+                    switchSection(targetId);
+                });
+            });
+
+            // Initialize Criteria Tabs
+            if (criteriaTabsContainer && criteriaContentContainer) {
+                criteriaData.forEach((criterion, index) => {
+                    const button = document.createElement('button');
+                    button.classList.add('tab-button');
+                    button.textContent = criterion.name;
+                    button.dataset.target = `criterion-${criterion.id}`;
+                    criteriaTabsContainer.appendChild(button);
+
+                    const contentDiv = document.createElement('div');
+                    contentDiv.id = `criterion-${criterion.id}`;
+                    contentDiv.classList.add('criterion-content', 'p-4', 'border', 'border-slate-200', 'rounded-md', 'bg-white');
+                    contentDiv.innerHTML = `<h4 class="font-semibold text-lg text-sky-700 mb-2">${criterion.name}</h4><p>${criterion.content}</p>`;
+                    if (index !== 0) {
+                        contentDiv.style.display = 'none';
+                    } else {
+                         button.classList.add('active');
+                    }
+                    criteriaContentContainer.appendChild(contentDiv);
+
+                    button.addEventListener('click', function() {
+                        document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                        this.classList.add('active');
+                        document.querySelectorAll('.criterion-content').forEach(content => content.style.display = 'none');
+                        document.getElementById(this.dataset.target).style.display = 'block';
+                    });
+                });
+            }
+            
+            // Initialize Methodologies Accordion
+            if (methodologiesAccordionContainer) {
+                methodologiesData.forEach((category, index) => {
+                    const accordionItem = document.createElement('div');
+                    accordionItem.classList.add('accordion-item');
+
+                    const header = document.createElement('div');
+                    header.classList.add('accordion-header');
+                    header.innerHTML = `<span>${category.title}</span><span class="icon"></span>`;
+                    
+                    const content = document.createElement('div');
+                    content.classList.add('accordion-content');
+                    const ul = document.createElement('ul');
+                    ul.classList.add('list-disc', 'list-inside', 'space-y-1');
+                    category.items.forEach(itemText => {
+                        const li = document.createElement('li');
+                        li.textContent = itemText;
+                        ul.appendChild(li);
+                    });
+                    content.appendChild(ul);
+
+                    accordionItem.appendChild(header);
+                    accordionItem.appendChild(content);
+                    methodologiesAccordionContainer.appendChild(accordionItem);
+
+                    header.addEventListener('click', function() {
+                        const parentItem = this.parentElement;
+                        parentItem.classList.toggle('open');
+                    });
+                });
+            }
+
+            // Activate the first section by default
+            switchSection('inicio');
+        });
+    </script>
+</body>
+</html>
